@@ -1,9 +1,6 @@
-import { Component} from '@angular/core';
-import { MaterialModule } from 'src/app/material/material.module';
-interface AlumnosUtl{
-  nombre: string,
-  edad: number
-}
+import { Component, OnInit } from '@angular/core';
+import { AlumnosUtl } from '../interfaces/utl.interfaces';
+import { UtlService } from '../service/utl.service';
 
 @Component({
   selector: 'app-main-page',
@@ -11,34 +8,12 @@ interface AlumnosUtl{
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent{
-  alumnosUtl:AlumnosUtl[]=[
-    {
-      nombre: 'Mario',
-      edad: 15
-    },
-    {
-      nombre: 'Lucia',
-      edad: 21
-    },
-    {
-      nombre: 'Leonardo',
-      edad: 21
-    },
-    {
-      nombre: 'Diana',
-      edad: 21
-    }
-  ]
-  regAlumnos:AlumnosUtl={
-    nombre:'',
-    edad : 0
-  }
-  agregar(){
-    //console.log(this.regAlumnos)
-    this.alumnosUtl.push (this.regAlumnos)
-    this.regAlumnos={
-      nombre:'',
-      edad:0
-    }
-  }
+
+regAlumno:AlumnosUtl={
+  nombre:'',
+  edad:0
+}
+
+constructor(){}
+ 
 }
