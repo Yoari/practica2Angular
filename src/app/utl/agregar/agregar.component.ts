@@ -22,7 +22,7 @@ export class AgregarComponent {
   
   agregar(){
     //console.log(this.alumnosUtl)
-    /this.alumnosUtl.push(this.regAlum);/
+    this.UtlService.agregarAlumno(this.regAlum);
     this.onNuevosAlumnos.emit(this.regAlum);
     this.regAlum={
       nombre:'',
