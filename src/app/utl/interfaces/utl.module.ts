@@ -11,10 +11,10 @@ import { AgregarComponent } from '../agregar/agregar.component';
   declarations: [
     MainPageComponent,
     AlumnosComponent,
-    AgregarComponent,
+    AgregarComponent
   ],
   exports:[
-    MainPageComponent,
+    MainPageComponent
   ],
   imports: [
     CommonModule,

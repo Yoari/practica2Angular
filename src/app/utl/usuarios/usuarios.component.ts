@@ -9,9 +9,18 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class UsuariosComponent implements OnInit {
 
   constructor( private formBuilder: FormBuilder) {}
-    form = new FormGroup({
-      nombre: new FormControl(''),
-      password: new FormControl(''),
+
+  obtenerError(){
+    var nom = this.form.get('nombre');
+    var pass = this.form.get ('passwor');
+    if(nom?.hasError('required')){
+      return 'el campo es requerido'
+    }
+  }
+
+  form = new FormGroup({
+      nombre: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     });
 
   ngOnInit(): void {
